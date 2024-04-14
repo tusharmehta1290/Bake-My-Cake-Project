@@ -1,0 +1,55 @@
+img{
+    height: 36vh;
+    width: 20vw;
+}
+
+
+.container{
+    /* border: 2px solid red; */
+    overflow: auto;
+    float: left;
+    padding: 5px;
+    margin: 0 2px 0 8px;
+}
+
+.innerContainer{
+    /* border: 2px solid yellow; */
+    overflow: auto;
+}
+
+.cake-card{
+    border: 2px solid black;
+    width: fit-content;
+    padding: 20px;
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    box-shadow: 30px;
+    border-radius: 10px;
+}
+
+.rating-wrapper{
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+}
+
+.delivery{
+    margin-left: 30%;
+}
+
+.btn{
+    background-color: #ffecd1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btncontainer{
+    /* border: 2px solid rebeccapurple; */
+    width: 100%;
+    display: flex;
+    margin: 8px 15px  0 0 ;
+    justify-content: center ;
+    align-items: center;
+}

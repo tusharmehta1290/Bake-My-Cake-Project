@@ -1,0 +1,36 @@
+#login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 20px;
+    background-image: linear-gradient(to right,#ffafbd , #ffc3a0);
+    }
+
+mat-form-field {
+    width: 250px;
+    margin-right: 15px;
+    background-color: #454545;
+    height: 56px;
+}
+
+h4{
+    margin-top: 7%;
+    float: left;
+}
+
+.Caption{
+    /* border: 2px solid saddlebrown; */
+    overflow: auto;
+    width: fit-content;
+    margin: 8%;
+}
+
+.btn{
+    float: right;
+    margin-top: 2.9px;
+    margin-left: 8px;
+}

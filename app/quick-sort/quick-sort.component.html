@@ -1,0 +1,11 @@
+<mat-form-field appearance="outline" class="maincheck" color="primary">
+    <mat-label class="text">Quick-Filter</mat-label>
+    <mat-select [(ngModel)]="quicksort" (ngModelChange)="Onfilter()" class="select" color="warn">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="cake">Cakes</mat-option>
+        <mat-option value="cookie">Cookies</mat-option>
+        <mat-option value="brownie">Brownies</mat-option>
+        <mat-option value="cupCake">Cup-cakes</mat-option>
+    </mat-select>
+</mat-form-field>
+

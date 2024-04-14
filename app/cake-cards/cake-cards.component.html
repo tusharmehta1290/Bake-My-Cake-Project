@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="innerContainer">
+        <mat-card class="cake-card" matRipple [matRippleCentered]="true">
+            <img src="../../assets/{{cake?.name}}.jpg" alt="{{ cake?.name }}" id="card-img"/>
+            
+            <mat-card-header>
+                <mat-card-subtitle class="card-header">{{cake?.name}}</mat-card-subtitle>
+                <mat-card-title class="card-header">Rs {{cake?.price}}</mat-card-title>
+            </mat-card-header>
+        
+  
+            <mat-card-content>
+                    <div class="rating-wrapper">
+                        <span class="cakerating">{{cake?.rating}}</span>
+                        <mat-icon class="staricon">star</mat-icon>
+                    
+                    <mat-card-subtitle class="delivery">Earliest Delivery: <span>{{cake?.earliestDelivery}}</span></mat-card-subtitle>
+                </div>    
+            </mat-card-content>
+
+
+            <mat-card-actions>
+                <div class="btncontainer">
+                    
+                    <button mat-button color="primary" routerLink="/order-view/{{cake?.id}}">Add to cart</button>
+                    <a routerLink="/order-view/{{cake?.id}}"><mat-icon color="primary" matTooltip="add to cart">shopping_cart</mat-icon></a></div>   
+            </mat-card-actions>
+
+        </mat-card>    
+    </div>
+</div>
+  

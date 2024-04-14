@@ -1,0 +1,12 @@
+<div class="filters">
+    <div class="searchcontainer">
+        <app-search (searchTextChanged)="onSearchTextChanged($event)" class="searchBar"></app-search>
+    </div>
+    <div class="quicksortcontainer">
+        <app-quick-sort (filteredCategory)="onFilter($event)" class="quicksearch"></app-quick-sort>
+    </div>    
+</div>
+
+<div class="maincards">
+    <app-cake-cards *ngFor="let cake of cakes" [cake]="cake"></app-cake-cards>
+</div>

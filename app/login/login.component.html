@@ -1,0 +1,13 @@
+<div id="login-form" *ngIf="checkIfLoggedIn == false">
+    <h3>If you are Administrator, enter your login Code</h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Enter login code</mat-label>
+        <input matInput type="password" name="" [(ngModel)]="cakeRequestCode">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="validateCakeRequestCode()">Submit</button>
+    <div class="Caption"><h4>If you are a Visitor, </h4> <button class="btn" mat-flat-button (click)="navigateToHome()" color="warn">Go to Home</button> </div>
+</div>
+
+<div *ngIf="checkIfLoggedIn == true"> 
+    <app-admin-order-requests></app-admin-order-requests>
+</div>

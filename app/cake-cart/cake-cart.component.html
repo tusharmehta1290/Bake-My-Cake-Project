@@ -1,0 +1,130 @@
+<section id="cake-content">
+    
+    <section id="cakedetails">
+        <div id="cake-left">
+            <img src="../../assets/{{cake?.name}}.jpg" alt="{{cake?.name}}">
+        </div>
+
+        <div id="cake-right">
+            <h2 id="heading">{{cake?.name}}</h2>
+            <div class="cakecontent">
+                <div class="rating">
+                    <span id="rating">Rating: {{cake?.rating}}<mat-icon>star</mat-icon></span>
+                </div>
+                <p id="price"><strong>₹{{cake?.price}}</strong> {{cake?.desc}}</p>
+
+            </div>
+        </div>    
+
+    
+
+        <div id="requestForm">
+            <section id="formm">
+                <form id="form" #orderRequestForm="ngForm" (ngSubmit)="placeTheOrder(orderRequestForm)">
+
+                    <p class="formdetails">Please fill these details to get your order placed</p>
+                    <div class="mainform">
+                        <div class="row">
+                            
+                            <!-- custom message section that is visible for the cakes only! -->
+                           
+                        
+                            <mat-form-field appearance="outline">
+                                <mat-label>Delivery date</mat-label>
+                                <input matInput [matDatepicker]="picker" [(ngModel)]="cakeRequest.deliveryDate" 
+                                [min]="minDate" required name="deliveryDate" #deliveryDate="ngModel">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                
+                                <mat-error *ngIf="deliveryDate.errors?.['required']">Delivery date is required</mat-error>
+                            </mat-form-field>
+                        
+                        </div>
+                        <!-- first row ends here!  -->
+
+                        <div class="row">
+
+                            <mat-form-field appearance="outline" id="email" class="margin-left">
+                                <mat-label>Email</mat-label>
+                                <input type="text" matInput [(ngModel)]="cakeRequest.email" name="email" email #email="ngModel" required pattern="^[a-zA-Z_][a-zA-Z0-9_]*@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$">
+
+                                <mat-error *ngIf="email.errors?.['required']">Email id is required</mat-error>
+                                <mat-error *ngIf="email.invalid && email.dirty && !email.errors?.['required']">Enter valid email id</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" id="phone">
+                                <mat-label>Phone</mat-label>
+                                <input type="number" matInput name="phone" [(ngModel)]="cakeRequest.phone" required pattern="^[789]\d{9}$" #phone="ngModel">
+                
+                                <mat-error *ngIf="phone.errors?.['required']">Phone number is required</mat-error>
+                                <mat-error *ngIf="phone.errors?.['pattern']">Kindly enter a valid number (Number starts from 9/8/7)</mat-error>
+                            </mat-form-field>
+
+                        </div>
+                        <!-- second row ends here!  -->
+
+                        <div class="row">
+
+                            <mat-form-field appearance="outline" id="pincode" class="margin-left">
+                                <mat-label>Pincode</mat-label>
+                                <input type="number" matInput [(ngModel)]="cakeRequest.pincode" name="pincode" #pincode="ngModel" min="10000" required>
+                
+                                <mat-error *ngIf="pincode.errors?.['required']">Pincode is required</mat-error>
+                                <mat-error *ngIf="pincode.errors?.['min']">Pincode should be at least 5 digits</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter the Delivery address</mat-label>
+                                <input type="text" matInput name="address" [(ngModel)]="cakeRequest.address" required minlength="10" #address="ngModel">
+                                <mat-error *ngIf="address.errors?.['required']">Address is required</mat-error>
+                                <mat-error *ngIf="address.errors?.['minlength']">Address must have minimum length of 10 characters</mat-error>
+                            </mat-form-field>
+
+                        </div>
+                        <!-- third row ends here!  -->
+                        
+                        <div class="row">
+
+                            <mat-form-field appearance="outline" id="quantity" class="margin-left">
+                                <mat-label>Quantity</mat-label>
+                                <input type="number" matInput name="quantity" [(ngModel)]="cakeRequest.quantity" required min="1" #quantity="ngModel">
+                
+                                <mat-error *ngIf="quantity.errors?.['required']">Quantity is required</mat-error>
+                                <mat-error *ngIf="quantity.errors?.['min']">Quantity cannot be less than 1</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Total Price</mat-label>
+                                <input type="text" matInput [value]="calculateTotalPrice()" readonly>
+                              </mat-form-field>
+
+                        </div>
+                        
+                        <!-- fourth row ends here!  -->
+
+                        <div class="row radiobtn">
+
+                            <mat-radio-group name="eggEggles" [(ngModel)]="cakeRequest.eggEggles" required #eggEggles="ngModel">
+                                <mat-radio-button value="withEgg">With Egg</mat-radio-button>
+                                <mat-radio-button value="withoutEgg">Eggless</mat-radio-button>
+                                <mat-error *ngIf="eggEggles.errors?.['required']">Please select an option</mat-error>
+                            </mat-radio-group>
+
+                        </div>
+                        <!-- fifth row ends here!  -->
+
+                        <div class="row btnrow">
+
+                            <button mat-raised-button color="primary" type="reset" color="accent" id="resetBtn">Reset</button>
+                            <button mat-raised-button color="primary" type="submit" id="orderNow" [disabled]="orderRequestForm.invalid">Place Order</button>
+                        
+                        </div>
+
+                    </div>
+
+                </form>
+            </section>
+        </div>
+
+    </section>
+</section>

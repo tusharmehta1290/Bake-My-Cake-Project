@@ -1,0 +1,101 @@
+#cake-left img {
+    width: 100%;
+    max-width: 730px;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #7a7979;
+    float: left;
+  }
+  
+  #cake-right{
+    margin-top: 20px;
+    float: right;
+    width: 49vw;
+    height: fit-content;
+    /* border: 2px solid black; */
+    margin-left: 20px;  
+  }
+
+  #heading{
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  #cake-content{
+    margin-top: 5px;
+  }
+
+  .cakecontent{
+    /* border: 2px solid black */
+  }
+
+  #rating{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #price{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+
+  #cakedetails{
+    /* border: 2px solid red; */
+    overflow: auto;
+  }
+
+  #form{
+    /* border: 2px solid red; */
+    background-color: #7a7979;
+    background-color:#454545;
+    float: right;
+    /* overflow: auto */
+    width: 48vw;
+    margin-right: 5px;
+    padding: 20px;
+    height:67vh
+  }
+
+  .formdetails{
+    /* border: 2px solid firebrick; */
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 540;
+    text-align: center;
+    color: #dbd3d8;
+    border-bottom: 2px solid black  ;
+    border-radius: 10%;
+  }
+
+  .mainform{
+    padding: 40px;
+    margin-left: 15px;
+    text-align: center;
+  }
+
+  .margin-left{
+    margin-right: 75px;
+  }
+
+.radiobtn{
+  border: 2px solid white;
+  width: 80%;
+  margin-left: 60px;
+  background: linear-gradient(to bottom,#232323, #454545);
+
+}
+
+.btnrow{
+  margin-top: 10px;
+}
+
+button{
+  width: 20vw;
+  margin: 5px;
+}
